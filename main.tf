@@ -33,7 +33,11 @@ module "nic" {
   depends_on = [module.resource-group, module.subnet]
 }
 
-
+module "bastionhost" {
+  source               = "./modules/bastionhost"
+  andargusnekadarwaaza = var.andargusnekadarwaaza
+  depends_on           = [module.resource-group, module.publicip, module.subnet]
+}
 
 # resource "azurerm_subnet_network_security_group_association" "snetnsg" {
 #   subnet_id                 = azurerm_subnet.snet.id

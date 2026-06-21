@@ -1,3 +1,3 @@
-output "subnet" {
-  value = module.subnet.subnet_id
-}
+# output "snet" {
+#   value = module.subnet.subnet_id
+# }
