@@ -7,7 +7,7 @@ resource "azurerm_network_interface" "nic" {
 
   ip_configuration {
     name                          = each.value.ip_configuration.name
-    subnet_id                     = data.azurerm_subnet.ids.subnet_id
+    subnet_id                     = data.azurerm_subnet.snetfornic[each.key].id
     private_ip_address_allocation = each.value.ip_configuration.private_ip_address_allocation
     # public_ip_address_id = azurerm_public_ip.mypip1.id
   }
